@@ -1,2 +1,2 @@
 # slg_test
-Seller Labs Group test case
+seller labs group solved test case 
