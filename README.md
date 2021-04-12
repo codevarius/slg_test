@@ -3,11 +3,11 @@ I.
 seller labs group job test 
 
 II. 
-steps to run app:
-      1. clone slg_test repo
-      2. tune application.properties
-      3. cd /path_to_local_repository
-      4. mvn spring-boot:run
+steps to run app: 
+1. clone slg_test repo 
+2. tune application.properties 
+3. cd /path_to_local_repository 
+4. mvn spring-boot:run
 
 III. 
 link to postman request collection to import and test - 
