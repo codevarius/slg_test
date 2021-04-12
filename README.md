@@ -1,5 +1,5 @@
 # slg_test
-seller labs group test case 
+seller labs group job test 
 
 steps to run app:
   1. clone slg_test repo
