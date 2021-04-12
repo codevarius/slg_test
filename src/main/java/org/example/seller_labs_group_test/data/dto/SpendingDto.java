@@ -15,15 +15,15 @@ public class SpendingDto {
     private List<TransactionEntity> transactionsList;
 
     private String person;
-    private Long amount;
+    private Long spending;
 
     public SpendingDto(PersonEntity personEntity, List<TransactionEntity> transactionsList) {
-        setAmount(transactionsList);
+        setSpending(transactionsList);
         setPerson(personEntity);
     }
 
     public SpendingDto(List<TransactionEntity> transactionEntities) {
-        setAmount(transactionEntities);
+        setSpending(transactionEntities);
         setPerson(transactionEntities.stream().findAny().orElseThrow().getPersonEntity());
     }
 
@@ -31,18 +31,18 @@ public class SpendingDto {
         return person;
     }
 
-    public void setPerson(PersonEntity personEntity) {
+    private void setPerson(PersonEntity personEntity) {
         this.personEntity = personEntity;
         this.person = personEntity.getName();
     }
 
-    public Long getAmount() {
-        return amount;
+    public Long getSpending() {
+        return spending;
     }
 
-    public void setAmount(List<TransactionEntity> transactionsList) {
+    public void setSpending(List<TransactionEntity> transactionsList) {
         this.transactionsList = new ArrayList<>(transactionsList);
-        this.amount = transactionsList.stream()
+        this.spending = transactionsList.stream()
                 .map(TransactionEntity::getAmount)
                 .reduce(0L, Long::sum);
     }

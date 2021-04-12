@@ -1,5 +1,6 @@
 package org.example.seller_labs_group_test.controllers;
 
+import org.example.seller_labs_group_test.data.dto.DailySpendingDto;
 import org.example.seller_labs_group_test.data.dto.SpendingDto;
 import org.example.seller_labs_group_test.services.SpendingDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,22 @@ public class MainController {
                 .filterWithStrParameter(commentFilterStr)
                 .filterByMinNumericParameter(minAmount)
                 .filterByMaxNumericParameter(maxAmount)
-                .getResult();
+                .getSpendingResult();
+
+        return ResponseEntity.ok(payload);
+    }
+
+    @GetMapping("/daily-spending")
+    public ResponseEntity<List<DailySpendingDto>> dailySpending(
+            //Required params
+            @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
+            @RequestParam(name = "person") Long personId
+    ) {
+        List<DailySpendingDto> payload = dataService
+                .selectDataBetween(startDate, endDate)
+                .filterById(Optional.ofNullable(personId))
+                .getDailySpendingResult();
 
         return ResponseEntity.ok(payload);
     }

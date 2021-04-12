@@ -16,5 +16,8 @@ public interface DataService<T> {
 
     DataService<T> filterByMinNumericParameter(Optional<Long> optional);
 
-    public List<T> getResult();
+    DataService<T> filterById(Optional<Long> optional);
+
+    List<T> getSpendingResult();
+
 }

@@ -35,4 +35,8 @@ public class PersonEntity {
     public void setTransactionList(List<TransactionEntity> transactionList) {
         this.transactionList = transactionList;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
