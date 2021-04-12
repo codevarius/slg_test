@@ -16,4 +16,6 @@ public class ExceptionController {
         return ResponseEntity.badRequest().body(
                 String.join(MyAppDelimeters.SPACE.value, "🤔 We have some problems:", ex.getMessage()));
     }
+
+    //TODO other exceptions
 }
