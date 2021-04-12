@@ -16,5 +16,5 @@ https://www.getpostman.com/collections/8c1f94a4ee9a5d0b45b7
 or 💡 you can test in your own in browser - 
 http://176.118.165.78:9192/myapp/daily-spending?startDate=2020-01-01&endDate=2021-04-08&person=15
 
-IV.
-API - 
+IV. 🗺
+swagger api - http://176.118.165.78:9192/myapp/swagger-ui.html
